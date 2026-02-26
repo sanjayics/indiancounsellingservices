@@ -1,0 +1,462 @@
+/* --- Global Layout --- */
+.mainWrapper {
+  background-color: #0f172a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --- 1. Marquee --- */
+.marqueeBar {
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 10px 0;
+  overflow: hidden;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.marqueeTrack {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- 2. Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logoContainer { display: flex; align-items: center; cursor: pointer; }
+.logoImage { object-fit: contain; max-width: 100%; height: auto; }
+
+.navLinks { display: flex; gap: 2rem; align-items: center; }
+.navLinks button { background: none; border: none; color: white; cursor: pointer; font-weight: 500; transition: color 0.3s ease; }
+.navLinks button:hover { color: #38bdf8; }
+
+.navCTA {
+  background: #38bdf8 !important;
+  color: #0f172a !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+}
+
+/* --- 3. Hero Section --- */
+.heroSection {
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.slide {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 10% 80px;
+}
+
+.slide h1 { font-size: clamp(2.2rem, 8vw, 4.5rem); margin-bottom: 1rem; line-height: 1.1; }
+.slide p { font-size: clamp(1rem, 2vw, 1.2rem); color: #94a3b8; margin-bottom: 2rem; max-width: 700px; }
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.primaryBtn {
+  background: #38bdf8;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 59.2px;
+  transition: transform 0.2s ease;
+  width: 213.3px;
+}
+.primaryBtn:hover { transform: scale(1.05); }
+
+.liveCounter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 59.2px;
+}
+
+.pulseDot {
+  width: 10px; height: 10px; background-color: #ff4d4d; border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+.counterText { display: flex; flex-direction: column; text-align: left; }
+.countNumber { font-weight: 600; font-size: 1rem; color: #fff; line-height: 1.2; align-self: center; margin-right: 14px;}
+.countLabel { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- Hero Form --- */
+.heroFormContainer {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.heroForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.heroInput, .heroSelect {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+}
+.heroInput:focus, .heroSelect:focus { border-color: #38bdf8; }
+
+.heroSubmitBtn {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  
+}
+.heroSubmitBtn:hover { background: white; transform: translateY(-2px); }
+
+/* --- Hero Arrows (Desktop) --- */
+.arrowBtn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: none; color: white;
+  padding: 1rem; border-radius: 50%; cursor: pointer; z-index: 10;
+}
+.leftArw { left: 20px; }
+.rightArw { right: 20px; }
+
+/* --- 4. Feature Ribbon --- */
+.ribbonSection { background: #1e293b; padding: 4rem 5%; }
+.ribbonContainer {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+}
+.featureBox {
+  background: #334155; padding: 3rem; border-radius: 20px;
+  text-align: center; border-bottom: 4px solid #38bdf8;
+}
+.featureBox h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #38bdf8; }
+.featureBox p { line-height: 1.6; color: #cbd5e1; }
+
+
+.coursesSection {
+  padding: 6rem 0; /* No side padding so carousel goes edge-to-edge */
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.courseCarouselContainer {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+}
+
+/* The magic animation for 19 items */
+.courseTrack {
+  display: flex;
+  gap: 20px;
+  animation: scrollCourses 70s linear infinite; /* Slow & smooth */
+  width: max-content;
+}
+
+.courseTrack:hover {
+  animation-play-state: paused; /* Pause on hover so user can read */
+}
+
+@keyframes scrollCourses {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.courseCard {
+  width: 280px;
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.courseImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.courseImg {
+  object-fit: cover;
+}
+
+.courseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(56, 189, 248, 0.6); /* Brand color overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.courseCard:hover .courseOverlay {
+  opacity: 1;
+}
+
+.courseBtn {
+  background: white;
+  color: #0f172a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.courseInfo {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.courseInfo h4 {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.4;
+  height: 2.8rem; /* Keeps all cards same height even with 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .courseCard {
+    width: 220px;
+  }
+  .courseImageWrapper {
+    height: 140px;
+  }
+  .courseTrack {
+    animation-duration: 40s; /* Faster scroll on mobile */
+  }
+}
+
+
+/* --- 5. Awards Showcase --- */
+.awardsSection { padding: 6rem 5%; text-align: center; }
+.sectionTitle { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 3rem; text-align: center; }
+.awardsGrid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 2rem;
+  max-width: 1200px; margin: 0 auto;
+}
+.awardItem { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.logoWrapper {
+  width: 100%; height: 80px; display: flex; justify-content: center; align-items: center;
+  filter: grayscale(100%); transition: 0.3s ease; opacity: 0.7;
+}
+.logoWrapper:hover { filter: grayscale(0%); opacity: 1; }
+.partnerLogo { max-width: 100%; height: auto; mix-blend-mode: screen; }
+
+/* --- 6. Highlight Carousel --- */
+.gradientRibbon {
+  width: 100%; height: 8px; position: relative; z-index: 5;
+  background: linear-gradient(90deg, #38bdf8, #4f46e5, #1e1b4b);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+}
+
+
+.gradientsRibbon {
+width: 100%; 
+height: 8px; 
+position: relative; 
+z-index: 5;
+background: linear-gradient(90deg, #1e1b4b, #4f46e5, #38bdf8); /* Reversed */
+box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+}
+
+.highlightCarouselSection { padding: 6rem 5%; display: flex; justify-content: center; position: relative; }
+.highlightWrapper { max-width: 1100px; width: 100%; height: 500px; position: relative; }
+.highlightCard { display: flex; background: #1e293b; border-radius: 30px; overflow: hidden; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); }
+.highlightImageArea { flex: 1; position: relative; }
+.highlightImg { object-fit: cover; }
+.highlightTextArea { flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.highlightNumber { font-size: 5rem; font-weight: 900; color: rgba(56, 189, 248, 0.1); position: absolute; top: 20px; right: 40px; }
+.highlightTextArea h2 { font-size: 2.5rem; color: #38bdf8; margin-bottom: 1.5rem; }
+.highlightTextArea p { font-size: 1.1rem; color: #94a3b8; line-height: 1.8; margin-bottom: 2rem; }
+.highlightNav { display: flex; gap: 1rem; }
+.hNavBtn { background: #334155; border: none; color: white; padding: 12px; border-radius: 12px; cursor: pointer; transition: 0.3s; }
+.hNavBtn:hover { background: #38bdf8; color: #0f172a; }
+
+/* --- 7. Video Testimonials --- */
+.testimonialSection { padding: 8rem 5%; background: #0f172a; text-align: center; }
+.videoOuterWrapper { position: relative; display: flex; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0 50px; }
+.videoCarouselContainer {
+  flex: 1;
+  overflow: hidden;
+  padding: 2rem 0;
+  cursor: grab; /* Shows user they can drag */
+}
+.videoCarouselContainer:active {
+  cursor: grabbing;
+}
+.videoResponsiveContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.videoResponsiveContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.videoGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+.videoCard {
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: auto; /* Ensures iframe works, but drag handles the wrapper */
+  user-select: none; /* Prevents text highlighting while swiping */
+  min-height: 40px;
+}
+.videoCard h4 { padding: 15px; text-align: center; font-size: 1rem; color: #38bdf8; }
+.vArrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8;
+  padding: 12px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+.vArrow:hover { background: #38bdf8; color: #0f172a; }
+.vLeft { left: -50; }
+.vRight { right: -50; }
+
+/* --- 8. Action Ribbon --- */
+.actionRibbon { background: linear-gradient(90deg, #38bdf8, #818cf8); padding: 5rem 5%; text-align: center; }
+.actionContent h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); color: #0f172a; margin-bottom: 2rem; }
+.whiteBtn { background: white; color: #0f172a; border: none; padding: 1rem 3rem; border-radius: 50px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+.whiteBtn:hover { transform: scale(1.05); }
+
+/* --- 9. Footer --- */
+.footer { padding: 4rem 5%; border-top: 1px solid #1e293b; }
+.footerGrid { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.socials { display: flex; gap: 1.5rem; }
+.socials a { color: white; transition: color 0.3s; }
+.socials a:hover { color: #38bdf8; }
+.copyright { text-align: center; color: #475569; font-size: 0.8rem; }
+
+/* --- 10. Forms & Messages --- */
+.thankYouMessage { text-align: center; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.successIcon { width: 60px; height: 60px; background: #38bdf8; color: #0f172a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+.thankYouMessage h3 { font-size: 1.8rem; color: #38bdf8; }
+.resetBtn { background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; transition: 0.3s; }
+.resetBtn:hover { color: white; border-color: #38bdf8; }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+@media (max-width: 1024px) {
+  .awardsGrid { grid-template-columns: repeat(3, 1fr); }
+  .videoGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .logoImage { width: 140px; }
+  .logoContainer { justify-content: center; width: 100%; }
+  .countNumber {align-self: center; font-size: 16px; margin-right: 14px;}
+
+  .heroSection { min-height: 100vh; height: auto; }
+  .slide { padding: 100px 5% 40px; }
+  .heroButtons { flex-direction: column; gap: 1rem; }
+  .primaryBtn, .liveCounter { width: 100%; max-width: 320px; justify-content: center; }
+  
+  .heroFormContainer { width: 100%; margin-top: 2rem; }
+  .heroForm { grid-template-columns: 1fr; }
+  .arrowBtn { display: none; }
+
+  .ribbonSection { padding: 3rem 5%; }
+  .awardsGrid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  
+  .highlightWrapper { height: auto; }
+  .highlightCard { flex-direction: column; }
+  .highlightImageArea { height: 250px; }
+  .highlightTextArea { padding: 2rem; text-align: center; }
+  .highlightNav { justify-content: center; }
+  .highlightNumber { font-size: 3rem; top: 10px; right: 20px; display: none; }
+
+  .videoOuterWrapper { padding: 0; }
+  .videoGrid {
+    grid-template-columns: 1fr; 
+    width: 100%;
+    touch-action: pan-y; /* Allows vertical scrolling but captures horizontal drag */
+  }
+  .videoCard {
+    margin: 0 10px; /* Gives a little peek of the next card */
+  }
+  .vArrow { display: none; }
+
+  .footerGrid { flex-direction: column; gap: 2rem; text-align: center; }
+}
