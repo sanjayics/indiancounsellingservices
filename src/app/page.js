@@ -13,24 +13,24 @@ const heroSlides = [
 ];
 
 const courseList = [
-  { id: 1, name: "Advanced CBT Master Class", img: "/c1.jpg" },
-  { id: 2, name: "Advanced NLP Master Class", img: "/c2.jpg" },
-  { id: 3, name: "Psychotherapy Practical Program", img: "/c3.jpg" },
-  { id: 4, name: "Counselling Practical Internship", img: "/c4.jpg" },
-  { id: 5, name: "Clinical Practical Internship", img: "/c5.jpg" },
+  { id: 1, name: "Advanced CBT Master Class", img: "/c17.jpg" },
+  { id: 2, name: "Advanced NLP Master Class", img: "/c19.jpg" },
+  { id: 3, name: "Psychotherapy Practical Program", img: "/c5.jpg" },
+  { id: 4, name: "Counselling Practical Internship", img: "/c6.jpg" },
+  { id: 5, name: "Clinical Practical Internship", img: "/c7.jpg" },
   { id: 6, name: "Advanced Hypnotherapy Master Class", img: "/c6.jpg" },
   { id: 7, name: "Child Psychology Practical Program", img: "/c7.jpg" },
   { id: 8, name: "Diploma In Counselling", img: "/c8.jpg" },
   { id: 9, name: "Diploma In Child Psychology", img: "/c9.jpg" },
-  { id: 10, name: "Psychological Research Papers", img: "/c10.jpg" },
-  { id: 11, name: "Psychological Assessment Tools", img: "/c11.jpg" },
-  { id: 12, name: "Advanced School Counselling Course", img: "/c12.jpg" },
+  { id: 10, name: "Psychological Research Papers", img: "/c8.jpg" },
+  { id: 11, name: "Psychological Assessment Tools", img: "/c9.jpg" },
+  { id: 12, name: "Advanced School Counselling Course", img: "/c17.jpg" },
   { id: 13, name: "Art and Movement Therapy", img: "/c13.jpg" },
-  { id: 14, name: "Diploma in School Counselling", img: "/c14.jpg" },
-  { id: 15, name: "Industrial Psychology Internship", img: "/c15.jpg" },
+  { id: 14, name: "Diploma in School Counselling", img: "/c17.jpg" },
+  { id: 15, name: "Industrial Psychology Internship", img: "/c13.jpg" },
   { id: 16, name: "Diploma In Industrial Psychology", img: "/c16.jpg" },
   { id: 17, name: "Diploma in Psychotherapy", img: "/c17.jpg" },
-  { id: 18, name: "Diploma in Clinical Psychology", img: "/c18.jpg" },
+  { id: 18, name: "Diploma in Clinical Psychology", img: "/c16.jpg" },
   { id: 19, name: "Music Therapy", img: "/c19.jpg" },
 ];
 
@@ -92,7 +92,7 @@ export default function LandingPage() {
 
     // 1. Capture Form Data
     const formData = {
-      fullName: e.target[0].value,
+      name: e.target[0].value,
       mobile: e.target[1].value,
       email: e.target[2].value,
       course: e.target[3].value,
