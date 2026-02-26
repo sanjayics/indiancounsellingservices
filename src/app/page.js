@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import styles from './page.module.css';
 import NextImage from 'next/image';
+import Script from 'next/script';
 
 // --- DATA CONFIGURATION --- 
 const heroSlides = [
@@ -165,6 +166,21 @@ export default function LandingPage() {
     <div className={styles.mainWrapper}>
       {/* 1. Marquee */}
       <div className={styles.marqueeBar}>
+
+<Script id="tawk-to" strategy="afterInteractive">
+        {`
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/68fcbdf98f570d1956b50425/1j8dkc5vb';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+        `}
+      </Script>
+
         <div className={styles.marqueeTrack}>
           <span>🚀 BOOST YOUR CAREER IN COUNSELLING AND PSYCHOLOGY • LIVE SESSIONS BY RCI APPROVED TRAINERS • LIMITED SLOTS LEFT • 🚀 ENROLLMENT OPEN FOR SPRING 2026 • 🚀 </span>
           <span>🚀 BOOST YOUR CAREER IN COUNSELLING AND PSYCHOLOGY • LIVE SESSIONS BY RCI APPROVED TRAINERS • LIMITED SLOTS LEFT • 🚀 ENROLLMENT OPEN FOR SPRING 2026 • 🚀 </span>
