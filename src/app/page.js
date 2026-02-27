@@ -42,12 +42,12 @@ const features = [
 ];
 
 const awardLogos = [
-  { id: 1, src: "/iso.png", name: "ISO Certified"},
-  { id: 2, src: "/cdcl.png", name: "CDCL Recognized"},
-  { id: 3, src: "/iaap.png", name: "IAAP Member"}, 
-  { id: 4, src: "/msme.png", name: "MSME Registered"},
-  { id: 5, src: "/ugac.png", name: "UGAC Approved"},
-  { id: 6, src: "/iso9001.png", name: "ISO 9001:2015"},
+  { id: 1, src: "/iso.png", },
+  { id: 2, src: "/cdcl.png", },
+  { id: 3, src: "/iaap.png", }, 
+  { id: 4, src: "/msme.png", },
+  { id: 5, src: "/ugac.png", },
+  { id: 6, src: "/iso9001.png", },
 ];
 
 const highlightSlides = [
